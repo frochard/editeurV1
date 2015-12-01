@@ -122,7 +122,13 @@ public class MoteurEditionImpl extends Observable implements MoteurEdition {
 	 */
 	@Override
 	public void coller() throws UnsupportedOperationException{
+		//Test s'il y a une sélection en cours
 		int debutSelection= this.selection.getDebutSelection();
+		int longueurSelection = this.selection.getLongueurSelection();
+		if(longueurSelection>0){
+			// Suppression dans le buffer de la chaine coupée
+			this.buffer.getContenu().delete(debutSelection,debutSelection+longueurSelection);			
+		}
 		//Recuperation de la chaîne dans le presse papier
 		String txtAInserer=this.pressePapier.getContenu();
 		//Insertion de la chaîne dans le buffer

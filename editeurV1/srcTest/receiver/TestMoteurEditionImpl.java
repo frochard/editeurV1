@@ -153,6 +153,23 @@ public class TestMoteurEditionImpl {
 	}
 
 	/**
+	 * Test Coller si presse papier vide
+	 * */
+	@Test
+	public void testColler4() {
+		//Initialisation du buffer
+		String str = "Ceci est un test.";
+		StringBuffer strbuf = new StringBuffer(str);
+		testMoteur.getBuffer().setContenu(strbuf);
+		testMoteur.getPressePapier().setContenu("essai");
+		//Test de la méthode
+		testMoteur.selectionner(12, 4);
+		testMoteur.coller();
+		//méthodes de test
+		assertEquals("Ceci est un essai.",testMoteur.getBuffer().getContenu().toString());
+	}
+
+	/**
 	 * Test sur le début de la selection après Selectionner
 	 * */
 	@Test
