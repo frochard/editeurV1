@@ -5,15 +5,17 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-
-
+/**
+ * Cette classe permet de tester le moteur d'édition
+ * @author Sanaa Mairouch / Frederic Rochard
+ *
+ */
 public class TestMoteurEditionImpl {
 
 	private MoteurEditionImpl  testMoteur;
 
 	@Before
 	public void setUp() throws Exception {
-
 		//Instanciation de l'objet utilisé pour les tests
 		testMoteur = new MoteurEditionImpl(new Buffer(new StringBuffer()), new PressePapier(""), new Selection(0,0)) ;
 	}

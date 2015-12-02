@@ -10,6 +10,7 @@ public class PressePapier {
 
 	/**
 	 * Constructeur
+	 * @param contenu contenu du presse papier
 	 */
 	public PressePapier(String contenu) {
 		this.contenu = contenu;

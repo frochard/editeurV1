@@ -29,6 +29,7 @@ public class Selectionner implements Command {
 	/**
 	 * Constructeur de la classe Selectionner
 	 * @param receiver moteur d'édition de la commande Selectionner
+	 * @param invocator IHM de la commande Selectionner
 	 */
 	public Selectionner(MoteurEditionImpl receiver, Ihm	invocator) {
 		this.receiver = receiver;

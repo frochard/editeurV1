@@ -18,7 +18,7 @@ public class TestEditeur {
 	}
 
 	/**
-	 * Test de l'enregistreur pour la commande saisir
+	 * Scénario de test copier/coller
 	 */
 	@Test
 	public void testScenario1() {
@@ -48,10 +48,40 @@ public class TestEditeur {
 	}
 
 	/**
+	 * Scénario de test copier/coller
+	 */
+	@Test
+	public void testScenario2() {
+		//Initialisation du buffer
+		String str = "Le M1MIAGE est super.";
+		StringBuffer strbuf = new StringBuffer(str);
+		testEditeur.getMoteurEdition().getBuffer().setContenu(strbuf);
+		testEditeur.getIhm().getZoneTxt().setText(str);
+		Command cmdToExecute;
+		//Positionnement du curseur dans la zone de texte
+		testEditeur.getIhm().getZoneTxt().setSelectionStart(15);
+		testEditeur.getIhm().getZoneTxt().setSelectionEnd(20);
+		cmdToExecute= new Selectionner(testEditeur.getMoteurEdition(),testEditeur.getIhm());
+		cmdToExecute.execute();
+		//Appel de la commande couper enregistrable
+		cmdToExecute = new Copier(testEditeur.getMoteurEdition());
+		cmdToExecute.execute();
+		//Positionnement du curseur dans la zone de texte
+		testEditeur.getIhm().getZoneTxt().setSelectionStart(0);
+		testEditeur.getIhm().getZoneTxt().setSelectionEnd(0);
+		cmdToExecute = new Selectionner(testEditeur.getMoteurEdition(),testEditeur.getIhm());
+		cmdToExecute.execute();
+		cmdToExecute = new Coller(testEditeur.getMoteurEdition());
+		cmdToExecute.execute();
+		//méthodes de test
+		assertEquals("superLe M1MIAGE est super.", testEditeur.getMoteurEdition().getBuffer().getContenu().toString());
+	}
+
+	/**
 	 * Test de l'enregistreur pour saisir
 	 */
 	@Test
-	public void testEnregistrement2() {
+	public void Saisir() {
 		//Initialisation du buffer
 		String str = "";
 		StringBuffer strbuf = new StringBuffer(str);

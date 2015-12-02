@@ -29,6 +29,7 @@ public class Saisir implements Command {
 	/**
 	 * Constructeur de la classe Saisir
 	 * @param receiver moteur d'édition de la commande Saisir
+	 * @param invocator IHM de la commande Saisir
 	 */
 	public Saisir(MoteurEditionImpl receiver, Ihm invocator) {
 		this.receiver = receiver;

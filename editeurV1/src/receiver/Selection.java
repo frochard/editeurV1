@@ -40,7 +40,7 @@ public class Selection {
 	
 	/**
 	 * retourne la longueur de la sélection
-	 * @return debutSelection longueur de la sélection
+	 * @return longueurSelection longueur de la sélection
 	 */
 	public int getLongueurSelection() {
 		return longueurSelection;
@@ -48,7 +48,7 @@ public class Selection {
 
 	/**
 	 * affecte une valeur à la longueur de la sélection
-	 * @param debut valeur affectée à la longueur de la sélection
+	 * @param longueur valeur affectée à la longueur de la sélection
 	 */
 	public void setLongueurSelection(int longueur) {
 		this.longueurSelection = longueur;
