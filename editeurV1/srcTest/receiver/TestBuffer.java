@@ -5,6 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ *Classe de test du buffer
+ *@author Sanaa Mairouch / Frédéric Rochard
+ *@version V1 - 02/12/2015
+ */
 public class TestBuffer {
 
 	//Instanciation de l'objet à tester
